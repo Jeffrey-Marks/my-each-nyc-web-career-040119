@@ -1,19 +1,14 @@
-def my_collect(array)
-  output_array = []
+def my_each(array)
   i = 0
   while i < array.length
-    yield output_array.push(array[i])[i]
+    yield array[i]
     i += 1
   end
-  output_array
+  array
 end
 
-array = ["Tim Jones", "Tom Smith", "Jim Campagno"]
-my_collect(array) do |name|
-  name.split(" ").first
-end
+collection = [1, 2, 3, 4]
 
-collection = ['ruby', 'javascript', 'python', 'objective-c']
-my_collect(collection) do |lang|
-  lang.upcase
+my_each(collection) do |i|
+  i
 end
